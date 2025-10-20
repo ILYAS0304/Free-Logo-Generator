@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logo Crafter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <h1>Logo Crafter</h1>
+        <p>Create lightweight vector-like logos directly in your browser.</p>
+      </div>
+      <button id="download-btn" class="btn btn--primary" disabled>
+        Download PNG
+      </button>
+    </header>
+
+    <main class="layout">
+      <section class="panel panel--form">
+        <h2>Brand details</h2>
+        <form id="logo-form" class="form" autocomplete="off">
+          <label class="form__field">
+            <span>Brand name</span>
+            <input type="text" id="brand" name="brand" placeholder="Acme" required />
+          </label>
+
+          <label class="form__field">
+            <span>Tagline (optional)</span>
+            <input type="text" id="tagline" name="tagline" placeholder="Innovation for all" maxlength="60" />
+          </label>
+
+          <label class="form__field">
+            <span>Color palette</span>
+            <select id="palette" name="palette">
+              <option value="sunset">Sunset</option>
+              <option value="ocean">Ocean</option>
+              <option value="forest">Forest</option>
+              <option value="mono">Monochrome</option>
+              <option value="candy">Candy</option>
+            </select>
+          </label>
+
+          <label class="form__field">
+            <span>Shape style</span>
+            <div class="segmented">
+              <input type="radio" name="shape" value="circle" id="shape-circle" checked />
+              <label for="shape-circle">Circle</label>
+              <input type="radio" name="shape" value="diamond" id="shape-diamond" />
+              <label for="shape-diamond">Diamond</label>
+              <input type="radio" name="shape" value="hexagon" id="shape-hexagon" />
+              <label for="shape-hexagon">Hexagon</label>
+              <input type="radio" name="shape" value="wave" id="shape-wave" />
+              <label for="shape-wave">Wave</label>
+            </div>
+          </label>
+
+          <button type="submit" class="btn btn--secondary">Generate logo</button>
+        </form>
+      </section>
+
+      <section class="panel panel--preview">
+        <h2>Preview</h2>
+        <canvas id="logo-canvas" width="600" height="400" role="img" aria-label="Generated logo preview"></canvas>
+        <div class="tips">
+          <h3>Tips</h3>
+          <ul>
+            <li>Try mixing uppercase and lowercase letters.</li>
+            <li>Experiment with different palettes to match your brand personality.</li>
+            <li>Download the PNG and use it in presentations, pitches or prototypes.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Built with vanilla HTML, CSS and Canvas. Logos generated are free to use and
+        modify.
+      </p>
+    </footer>
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
